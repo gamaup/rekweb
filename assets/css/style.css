@@ -1,0 +1,280 @@
+body{
+  font-family: 'Khmer ui';
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+#wrapper{
+  height: auto;
+  margin: auto;
+}
+
+#container{
+  /*margin:auto;*/
+  width:auto;
+  height: auto;
+  /*border:solid black 1px;*/
+}
+
+#header h5{
+  float: left;
+  font-family: 'Rage italic';
+  font-size: 35px;
+  position: relative;
+  top: 8px;
+  left: 140px;
+}
+
+
+#header{
+  padding-bottom: 10px;
+  width: 100%;
+  height: 44px;
+  background-color: rgb(246, 66, 43);
+  color: white;
+  z-index: 1000;
+}
+
+#header span{
+  font-size: 30px;
+  position: absolute;
+  right: 50px;
+  top: 13px;
+  cursor: pointer;
+}
+
+.social i{
+  color: white;
+  padding-right: 8px;
+}
+
+.social{
+  width: 130px;
+  font-size: 30px;
+  float: right;
+  position: absolute;
+  right: 100px;
+  top: 4px;
+  padding-top: 8px;
+  border-right:solid white 1px;
+}
+
+/*NAVIGASI*/
+
+ul.menu {
+  display:block;
+  position:absolute;
+  left:350px;
+  font-family: 'Khmer ui';
+}
+
+.menu li{
+  float: left;
+  padding: 0;
+}
+
+.menu li a{
+  color: white;
+  padding: 18px 42px 16px 42px;
+
+}
+
+.menu li:hover a{
+  color: white;
+  background-color: rgba(255,255,255,0.6);
+  transition: all ease 0.5s;
+}
+
+.menu li:hover > ul{
+  display:block;
+}
+
+.menu a{
+  position: relative;
+  display: block;
+  font-weight: 200;
+  font-size:15px;
+  color:#999;
+}
+
+/*END-NAVIGASI*/
+
+.mleft{
+  width: 349px;
+  height: 588px;
+  float: left;
+  background-color: rgb(235,235,235); 
+  border-right:solid rgb(210,210,210) 1px;
+}
+
+.kategori{
+  width: 290px;
+  height: 440px;
+  margin-left: 28px;
+  margin-top: 50px;
+  border-top:solid rgb(210,210,210) 1px;
+}
+
+.mleft h3{
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  left: 88px;
+  top: 35px;
+}
+
+.select{
+  width: 256px;
+  height: 38px;
+  margin-top: 22px;
+  margin-left: 17px;
+  padding-left: 10px;
+  font-family: 'Khmer ui';
+  /*-webkit-appearance: none;*/
+  /*-moz-appearance: none;*/
+  /*overflow: hidden;*/
+  background: rgb(249,249,249);
+  border: none;
+}
+
+.select:hover{
+  border: solid rgb(246, 66, 43) 1px;
+}
+
+.select:checked){
+  color: black;
+  border:none;
+}
+
+.select:not(:checked){
+  color: rgb(188,188,188);
+}
+
+.kategori option{
+  color: black;
+}
+
+.kategori input[type="button"]{
+  width: 120px;
+  height: 45px;
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+  margin-top: 50px;
+  margin-left: 85px;
+  background-color: rgb(71,71,71);
+  color: white;
+  font-size: 16px;
+  font-family: 'Khmer ui';
+}
+
+.kategori input[type="button"]:hover{
+  background-color: rgb(246, 66, 43);
+  transition: all ease 0.4s;
+}
+
+.mright{
+  width: 999px;
+  height: 588px;
+  float: right;
+  /*border:solid black 1px;*/
+}
+
+.mright h4{
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  margin-left: 10px;
+  top: 50px;
+}
+
+.all-kategori{
+  width: 96%;
+  height: 508px;
+  margin-left: 10px;
+  margin-top: 60px;
+  border-top:solid rgb(210,210,210) 1px;
+  overflow-y:auto; 
+}
+
+/*-------------------------*/
+/*------FORM LOGIN-------*/
+/*-----------------------*/
+
+.login{
+  width: 200px;
+  height: 185px;
+  background-color: rgba(255,255,255,0.8);
+  /*background-color: rgb(255,255,255);*/
+  /*opacity: 0.8;*/
+  border-radius: 8px;
+  webkit-border-radius:8px;
+  position: absolute;
+  right: 32px;
+  top: 57px;
+  font-family: 'Khmer ui';
+  z-index: 1;
+}
+
+.login .u{
+  width: 0px;
+  height: 0px;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-bottom: 13px solid rgba(255,255,255,0.8);
+  position: absolute;
+  right: 17px;
+  top: -13px;
+}
+
+.login input[type="text"]{
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  width: 170px; 
+  height: 30px;
+  margin-top: -8px;
+  border: solid rgb(210,210,210) 1px;
+  background-color: rgba(255,255,255,0.8);
+}
+
+.login input[type="button"]{
+  width:60px;
+  height: 30px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border:none;
+  position: absolute;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  top: 138px;
+}
+
+.login input[type="button"][value="LOGIN"]{
+  background-color: rgba(0,0,0,0.6);
+  
+}
+
+.login input[type="button"][value="SIGN UP"]{
+  width: 74px;
+  background-color: rgba(246, 66, 43,0.9);
+  left: 114px;
+}
+
+.login td{
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+
+
+
+

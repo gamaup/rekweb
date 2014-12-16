@@ -1,0 +1,1 @@
+<img src="<?= base_url()?>assets/images/g9.jpg" width="1366px" height="589px">
