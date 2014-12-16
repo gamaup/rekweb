@@ -63,8 +63,8 @@
         <div class="thumbnail_wrap">
 
         <?php foreach ($makanan as $m) {?>
-        	<a href="<?= base_url()?>uploads/<?= $m->foto ?>" id="content" class="thumbnail" data-categories="city" title="City Photo 1 Caption">
-            <img src="<?= base_url()?>uploads/<?= $m->foto ?>" alt="City 1">
+        	<a href="<?= base_url()?>assets/uploads/<?= $m->foto ?>" id="content" class="thumbnail" data-categories="city" title="City Photo 1 Caption">
+            <img src="<?= base_url()?>assets/uploads/<?= $m->foto ?>" alt="City 1">
           </a>
         <?php } ?>
 
