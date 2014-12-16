@@ -3,7 +3,7 @@
                 <div class='foto' style='background-image:url(<?=base_url()?>assets/images/pp.jpg);'>
                 </div>
                 <div class='info'>
-                    <h4><?= $this->session->userdata('logged_in')['username'] ?></h4>
+                    <h4><?= $this->session->userdata('logged_in')['display_name'] ?></h4>
                     <h5><?= $this->session->userdata('logged_in')['role'] ?></h5>
                 </div>
                 <div class='opsi'>
@@ -25,6 +25,12 @@
                         <li <?= isset($pos_child) && $pos_parent == 'datamaster' && $pos_child == 'list_makanan' ? "class='active'" : ""; ?>><a href='<?= base_url() ?>admin/datamaster'>List Makanan</a></li>
                         <li <?= isset($pos_child) && $pos_parent == 'datamaster' && $pos_child == 'tambah_makanan' ? "class='active'" : ""; ?>><a href='<?= base_url() ?>admin/datamaster/add'>Tambah Makanan</a></li>
                         <li <?= isset($pos_child) && $pos_parent == 'datamaster' && $pos_child == 'manage_kategori' ? "class='active'" : ""; ?>><a href='<?= base_url() ?>admin/datamaster/kategori'>Manage Kategori</a></li>
+                    </ul>
+                </li>
+                <li class='second <?= $pos_parent == 'user_management' ? "active" : ""; ?>'><a><i class="fa fa-users"></i>User Management<i class='fa arrow'></i></a>
+                    <ul class='nav-second'>
+                        <li <?= isset($pos_child) && $pos_parent == 'user_management' && $pos_child == 'list_user' ? "class='active'" : ""; ?>><a href='<?= base_url() ?>admin/user_management'>User List</a></li>
+                        <li <?= isset($pos_child) && $pos_parent == 'user_management' && $pos_child == 'add_user' ? "class='active'" : ""; ?>><a href='<?= base_url() ?>admin/user_management/add'>Tambah User</a></li>
                     </ul>
                 </li>
             </ul>

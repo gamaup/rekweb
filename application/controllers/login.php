@@ -37,12 +37,14 @@ class Login extends CI_Controller {
             $sess_array = array();
             foreach ($result as $row) {
                 $sess_array = array(
-                    'id_user' => $row->id,
+                    'id_user' => $row->id_user,
                     'username' => $row->username,
+                    'display_name' => $row->display_name,
                     'role' => $row->role
                 );
                 $this->session->set_userdata('logged_in', $sess_array);
             }
+            $this->user_model->update_last_login($username);
             return TRUE;
         } else {
             $this->form_validation->set_message('check_database', 'Username and Password is not Valid!');

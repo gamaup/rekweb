@@ -40,14 +40,7 @@
 
 $route['default_controller'] = "front";
 $route['404_override'] = '';
-$route['admin'] = "admin/login";
-$route['article'] = "front/article";
-$route['article/(:num)'] = "front/article/$1";
-$route['promo'] = "front/promo";
-$route['promo/(:any)'] = "front/promo/$1";
-$route['package'] = "front/package";
-$route['package/(:num)'] = "front/package/$1";
-$route['gallery'] = "front/gallery";
+$route['admin'] = "login";
 
 
 /* End of file routes.php */

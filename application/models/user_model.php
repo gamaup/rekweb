@@ -17,11 +17,16 @@ Class User_model extends CI_Model {
         }
     }
 
-    function getAll() {
-        $this->db->select('*');
-        $this->db->from('user');
-        $q = $this->db->get();
-        return $q;
+    function get_all_user() {
+        $q = $this->db->get('user');
+        return $q->result();
+    }
+
+    function update_last_login($username) {
+        $date = date('Y-m-d H:i:s');
+        $data = array('last_login' => $date);
+        $this->db->where('username', $username);
+        $this->db->update('user', $data);
     }
 
     function add_user($data) {
