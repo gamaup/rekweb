@@ -28,7 +28,7 @@
       </tr>
       <tr>
         <td><input type="button" value="LOGIN"></td>
-        <td style="position:relative;left:-112px;top:1px">OR</td>
+        <td style="position:absolute;top:135px;right:100px">OR</td>
         <td><input type="button" value="SIGN UP"></td>
       </tr>
     </table>
@@ -38,7 +38,7 @@
       <h5>Cook-Off</h5>	
  
         <ul class="menu">
-          <li><a href="<?= base_url()?>">HOME</a></li>
+          <li><a href="<?= base_url("home")?>">HOME</a></li>
           <li><a href="<?= base_url("menu")?>">MENU-LIST</a></li>
           <li><a href="#event">ABOUT US</a></li>
           <li><a href="#contact">CONTACT US</a></li>

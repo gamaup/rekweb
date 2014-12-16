@@ -11,6 +11,10 @@ a{
   text-decoration: none;
 }
 
+li{
+  list-style: none;
+}
+
 #wrapper{
   height: auto;
   margin: auto;
@@ -108,7 +112,8 @@ ul.menu {
 
 .mleft{
   width: 349px;
-  height: 588px;
+  /*height: 588px;*/
+  height: 91%;
   float: left;
   background-color: rgb(235,235,235); 
   border-right:solid rgb(210,210,210) 1px;
@@ -164,6 +169,7 @@ ul.menu {
 .kategori input[type="button"]{
   width: 120px;
   height: 45px;
+  border-radius:8px;
   -moz-border-radius:8px;
   -webkit-border-radius:8px;
   margin-top: 50px;
