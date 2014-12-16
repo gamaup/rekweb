@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2014 at 05:40 PM
+-- Generation Time: Dec 16, 2014 at 03:50 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -115,20 +115,22 @@ INSERT INTO `makanan` (`id_mkn`, `nama_mkn`, `foto`, `asal`, `waktu`, `jenis`, `
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `role` enum('superadmin','editor','author') NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+  `id_user` int(3) NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) NOT NULL,
+  `password` text NOT NULL,
+  `role` enum('author','editor','superadmin') NOT NULL,
+  `display_name` varchar(30) NOT NULL,
+  `last_login` datetime NOT NULL,
+  PRIMARY KEY (`id_user`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`, `role`) VALUES
-(1, 'admin', '81dc9bdb52d04dc20036dbd8313ed055', 'superadmin'),
-(2, 'galih', 'galih', 'editor');
+INSERT INTO `user` (`id_user`, `username`, `password`, `role`, `display_name`, `last_login`) VALUES
+(1, 'admin', '81dc9bdb52d04dc20036dbd8313ed055', 'superadmin', 'Super Admin', '2014-12-16 15:04:46'),
+(2, 'gamaup', '81dc9bdb52d04dc20036dbd8313ed055', 'editor', 'Gama Unggul Priambada', '2014-12-16 14:36:29');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
