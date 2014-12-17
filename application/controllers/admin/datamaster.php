@@ -40,6 +40,7 @@ class Datamaster extends CI_Controller {
             $this->load->library('form_validation');
             $this->form_validation->set_error_delimiters("class='form-error' title='", "'");
             $this->form_validation->set_rules('nama', 'Nama', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('desc', 'Deskripsi', 'trim|required|xss_clean');
             $this->form_validation->set_rules('photo-name', 'Foto', 'trim|required');
 
             if ($this->form_validation->run() == FALSE) {
@@ -63,16 +64,18 @@ class Datamaster extends CI_Controller {
                 }
                 $data = array(
                     'nama_mkn' => $this->input->post('nama'),
+                    'desc' => $this->input->post('desc'),
                     'foto' => $foto,
                     'asal' => $this->input->post('asal'),
                     'waktu' => $this->input->post('waktu'),
                     'jenis' => $this->input->post('jenis'),
                     'cara' => $this->input->post('cara'),
-                    'ukuran' => $ukuran = $this->input->post('ukuran')
+                    'ukuran' => $ukuran = $this->input->post('ukuran'),
+                    'author' => $this->session->userdata('logged_in')['id_user']
                 );
                 $this->admin->addFood($data);
                 $this->session->set_flashdata("pesan", "<div class='alert alert-notice'>
-                <p><b>Sukses!</b> Makanan '".$nama."' berhasil ditambahkan ke database.<i class='fa fa-times'></i></p>
+                <p><b>Sukses!</b> Makanan berhasil ditambahkan ke database.<i class='fa fa-times'></i></p>
             </div>");
                 redirect('admin/datamaster', 'refresh');
             }
@@ -101,6 +104,7 @@ class Datamaster extends CI_Controller {
             $this->load->library('form_validation');
             $this->form_validation->set_error_delimiters("class='form-error' title='", "'");
             $this->form_validation->set_rules('nama', 'Nama', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('desc', 'Deskripsi', 'trim|required|xss_clean');
 
             if ($this->form_validation->run() == FALSE) {
                 $data = array(
@@ -119,11 +123,13 @@ class Datamaster extends CI_Controller {
                 if ($_FILES['photo']['size'] == 0) {
                     $data = array(
                         'nama_mkn' => $this->input->post('nama'),
+                        'desc' => $this->input->post('desc'),
                         'asal' => $this->input->post('asal'),
                         'waktu' => $this->input->post('waktu'),
                         'jenis' => $this->input->post('jenis'),
                         'cara' => $this->input->post('cara'),
-                        'ukuran' => $ukuran = $this->input->post('ukuran')
+                        'ukuran' => $ukuran = $this->input->post('ukuran'),
+                        'author' => $this->session->userdata('logged_in')['id_user']
                     );
                 } else {
                     //delete foto lama

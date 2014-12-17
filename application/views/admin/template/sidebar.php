@@ -27,11 +27,16 @@
                         <li <?= isset($pos_child) && $pos_parent == 'datamaster' && $pos_child == 'manage_kategori' ? "class='active'" : ""; ?>><a href='<?= base_url() ?>admin/datamaster/kategori'>Manage Kategori</a></li>
                     </ul>
                 </li>
+                <?php if($this->session->userdata('logged_in')['role'] == 'editor' || $this->session->userdata('logged_in')['role'] == 'superadmin') { ?>
+                <li <?= $pos_parent == 'editor' ? "class='active'" : ""; ?>><a href='<?= base_url() ?>admin/review'><i class="fa fa-pencil"></i>Editor Review<i class='fa arrow'></i></a></li>
+                <?php } ?>
+                <?php if($this->session->userdata('logged_in')['role'] == 'superadmin') { ?>
                 <li class='second <?= $pos_parent == 'user_management' ? "active" : ""; ?>'><a><i class="fa fa-users"></i>User Management<i class='fa arrow'></i></a>
                     <ul class='nav-second'>
                         <li <?= isset($pos_child) && $pos_parent == 'user_management' && $pos_child == 'list_user' ? "class='active'" : ""; ?>><a href='<?= base_url() ?>admin/user_management'>User List</a></li>
                         <li <?= isset($pos_child) && $pos_parent == 'user_management' && $pos_child == 'add_user' ? "class='active'" : ""; ?>><a href='<?= base_url() ?>admin/user_management/add'>Tambah User</a></li>
                     </ul>
                 </li>
+                <?php } ?>
             </ul>
         </aside>
