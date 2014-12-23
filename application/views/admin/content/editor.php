@@ -21,7 +21,7 @@
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($datamaster as $d) {
+                        foreach ($data_makanan as $d) {
                             echo "<tr>
                             <td>".$d->nama_mkn."</td>
                             <td><a href='".base_url()."assets/uploads/".$d->foto."' target='_blank'>Click to View</a></td>

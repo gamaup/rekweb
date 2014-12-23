@@ -75,6 +75,12 @@ Class Admin extends CI_Model {
         $this->db->where($dir, $id_kat);
         $this->db->update('makanan', $data);
     }
+
+    function get_all_unreviewed() {
+        $this->db->where('status', '0');
+        $q = $this->db->get('makanan');
+        return $q->result();
+    }
 }
 
 ?>
