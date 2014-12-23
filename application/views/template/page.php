@@ -9,8 +9,7 @@
 <div id="wrapper">
 
 	<?php $this->load->view('template/navigasi') ?>
-
-	
+	<i class="fa fa-user user"></i>
 
 	<div id="container">
 		<?php

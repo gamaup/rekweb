@@ -1,37 +1,63 @@
 <script>
     $(document).ready(function(){
-      $(".login").fadeOut(0);
-        $("span").click(function(){
-          $(".login").fadeIn(200);
+      $(".login").hide();
+        $(".user").click(function(){
+          $(".login").toggle();
         });
-          $("#container").click(function(){
-            $(".login").fadeOut(100);
+          $("#header").click(function(){
+            $(".login").fadeOut(200);
           });
+          $("#container").click(function(){
+            $(".login").fadeOut(200);
+          });
+
       });
+  </script>
+
+<script>
+
+    // $(document).ready(function(){
+    //   $('.login').fadeOut();
+    //      $('user').click(function(){
+    //       $('.login').fadeIn(100);
+    //       });
+          
+    // });
+
+    
+    // $('.user').click(function() {
+        // $('.user').next('.login').toggle();
+        // event.stopPropagation();
+        // $('.user').not(this).next('.login').hide();
+    // });
+
   </script>
 
 
   <div class="login">
     <div class="u"></div>
+
     <table>
       <tr>
         <td>USERNAME :</td>
       </tr>
       <tr>
-        <td><input type="text"></td>
+        <td><input type="text" name="username"></td>
       </tr>
       <tr>
         <td>PASSWORD :</td>
       </tr>
       <tr>
-        <td><input type="text"></td>
+        <td><input type="text" name="password"></td>
       </tr>
       <tr>
         <td><input type="button" value="LOGIN"></td>
         <td style="position:absolute;top:135px;right:100px">OR</td>
-        <td><input type="button" value="SIGN UP"></td>
+        <td><a href="<?= base_url("sign") ?>"><input type="button" value="SIGN UP"></td></a>
       </tr>
+       
     </table>
+
   </div>
 <div id="header">
 
@@ -48,5 +74,5 @@
       <i class="fa fa-instagram"></i>
       <i class="fa fa-twitter"></i>
       <i class="fa fa-facebook"></i>
-      </div><span><i class="fa fa-user"></i></span>
+      </div>
 	</div>

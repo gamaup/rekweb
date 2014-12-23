@@ -50,24 +50,21 @@
         
         <div class="thumbnail_wrap">
         <?php foreach ($makanan as $m) {?>
-        	<a href="<?= base_url()?>assets/uploads/<?= $m->foto ?>" id="content" class="thumbnail" data-categories="city" title="City Photo 1 Caption">
-            <img src="<?= base_url()?>assets/uploads/<?= $m->foto ?>" alt="City 1">
-          </a>
+        	 <a href="<?= base_url()?>menu/view/<?= $m->id_mkn ?>" class="thumbnail">
+              <img src="<?= base_url()?>assets/uploads/<?= $m->foto ?>" alt="City 1">
+            </a>
         <?php } ?>
+
         </div><!-- .thumbnail_wrap end -->
 
       </div><!-- .photos end -->
 
     </div><!-- .gallery end -->
 
-
-
           <script src='https://googledrive.com/host/0B4EPpNb57zzccmxNMTduN1lxMHc'></script>
           <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
           <script src="<?= base_url()?>assets/js/fancybox/jquery.fancybox.js"></script>
           <script src="<?= base_url()?>assets/js/gallery.js"></script>
-
-          
 
         </div>
     </div>
