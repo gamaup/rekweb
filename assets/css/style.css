@@ -144,6 +144,17 @@ ul.menu {
   top: 35px;
 }
 
+.kategori input[type="text"]{
+  width: 258px;
+  height: 38px;
+  margin-top: 22px;
+  margin-left: 17px;
+  padding-left: 10px;
+  font-family: 'Khmer ui';
+  background: rgb(249,249,249);
+  border:none;
+}
+
 .select{
   width: 256px;
   height: 38px;
@@ -155,7 +166,7 @@ ul.menu {
   border: none;
 }
 
-.select:hover{
+.select:hover,input[type="text"]:hover{
   border: solid rgb(246, 66, 43) 1px;
 }
 
@@ -172,7 +183,7 @@ ul.menu {
   color: black;
 }
 
-.kategori input[type="button"]{
+.kategori input[type="submit"]{
   width: 120px;
   height: 45px;
   border-radius:8px;
@@ -184,9 +195,10 @@ ul.menu {
   color: white;
   font-size: 16px;
   font-family: 'Khmer ui';
+  cursor: pointer;
 }
 
-.kategori input[type="button"]:hover{
+.kategori input[type="submit"]:hover{
   background-color: rgb(246, 66, 43);
   transition: all ease 0.4s;
 }
@@ -467,6 +479,29 @@ ul.menu {
     -o-transition: all .5s ease 0s;*/
 }
 
+.nama-makan-container{
+  width: 220px;
+  height: 165px;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.nama-makan{
+  position: relative;
+  top: -73;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.nama-makan .nama{
+  border-top:solid white 1px;
+  border-bottom:solid white 1px;
+  padding:10px;
+  text-align: center;
+}
 
 
 

@@ -23,4 +23,15 @@ class Menu extends CI_Controller {
     		$this->load->view('template/page', $data);
     	}
 	}
+
+	function cari() {
+		$kolom = $this->input->post('kolom');
+		$cari = $this->input->POST('cari');
+		$data['tampil'] = $this->user_model->cari_mahasiswa($kolom, $cari);
+		if($data['tampil'] == null) {
+			print('maaf data tidak ditemukan');
+		} else {
+			$this->load->view('user/tampil', $data);
+		}
+	}
 }

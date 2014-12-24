@@ -1,42 +1,43 @@
 <div class="mleft">
          <h3>SELECT CATEGORY</h3>
       <div class="kategori">
-        <select class="select">
-          <option>Food place...</option>
-          <option value="Tradisional">Tradisional</option>
-          <option value="Western">Western</option>
-          <option value="French">French</option>
-          <option value="Italian">Italian</option>
+        <form action="<?= base_url()?>menu" method="Get">
+  
+        <input type="text">
+          
+        <select name="place" class="select">
+          <option value="">Food place...</option>
+          <?php foreach ($this->menu_model->getKategories(1) as $t) {?>
+          <option value="<?= $t->id_kat ?>"><?= $t->nama_kat ?></option>
+          <?php } ?>
         </select>
-        <select class="select">
-          <option>What type</option>
-          <option value="Appetizer">Appetizer</option>
-          <option value="Main course">Main course</option>
-          <option value="Dessert">Dessert</option>
-          <option value="Beverages">Beverages</option>
+        <select name="type"class="select">
+          <option value="">What type....</option>
+          <?php foreach ($this->menu_model->getKategories(3) as $t) {?>
+          <option value="<?= $t->id_kat ?>"><?= $t->nama_kat ?></option>
+          <?php } ?>
         </select>
-        <select class="select">
-          <option>Food time....</option>
-          <option value="Breakfast">Breakfast</option>
-          <option value="Lunch">Lunch</option>
-          <option value="Dinner">Dinner</option>
+        <select name="time" class="select">
+          <option value="">Food time....</option>
+          <?php foreach ($this->menu_model->getKategories(2) as $t) {?>
+          <option value="<?= $t->id_kat ?>"><?= $t->nama_kat ?></option>
+          <?php } ?>
         </select>
-        <select class="select">
-          <option>How to cook..</option>
-          <option value="Fried">Fried</option>
-          <option value="Roasted">Roasted</option>
-          <option value="Smoked">Smoked</option>
-          <option value="Roasted">Roasted</option>
-          <option value="Boiled">Boiled</option>
+        <select name="how" class="select">
+          <option value="">How to cook..</option>
+          <?php foreach ($this->menu_model->getKategories(4) as $t) {?>
+          <option value="<?= $t->id_kat ?>"><?= $t->nama_kat ?></option>
+          <?php } ?>
         </select>
-        <select class="select">
-          <option>What size...</option>
-          <option value="Large">Large</option>
-          <option value="Medium">Medium</option>
-          <option value="Small">Small</option>
+        <select name="size" class="select">
+          <option value="">What size...</option>
+          <?php foreach ($this->menu_model->getKategories(5) as $t) {?>
+          <option value="<?= $t->id_kat ?>"><?= $t->nama_kat ?></option>
+          <?php } ?>
         </select>
 
-        <input type="button" value="SEARCH">
+        <input type="submit" value="SEARCH">
+        </form>
       </div>
     </div>
 
@@ -51,7 +52,11 @@
         <div class="thumbnail_wrap">
         <?php foreach ($makanan as $m) {?>
         	 <a href="<?= base_url()?>menu/view/<?= $m->id_mkn ?>" class="thumbnail">
+              <div class="nama-makan-container">
               <img src="<?= base_url()?>assets/uploads/<?= $m->foto ?>" alt="City 1">
+              <div class="nama-makan">
+              <div class="nama"><?= $m->nama_mkn?></div></div>
+              </div>
             </a>
         <?php } ?>
 

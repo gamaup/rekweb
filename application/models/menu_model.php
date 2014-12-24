@@ -22,6 +22,19 @@ Class Menu_model extends CI_Model {
         return $ret->nama_kat;
     }
 
+    function getKategories($id){
+        $this->db->where('id_dir', $id);
+        $q = $this->db->get('kategori');
+        return $q->result();
+    }
+
+    function cari($place, $type) {
+        $this->db->like('place', $place);
+        $this->db->like('type', $type);
+        $q = $this->db->get('makanan');
+        return $q->result();
+    }
+
 }
 
 ?>
