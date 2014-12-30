@@ -9,6 +9,11 @@ Class Menu_model extends CI_Model {
         return $q->result();
     }
 
+    function updateFood($data, $id){
+        $this->db->where('id_mkn', $id);
+        $this->db->update('makanan', $data);
+    }
+
     function getFood($id) {
         $this->db->where('id_mkn', $id);
         $q = $this->db->get('makanan');

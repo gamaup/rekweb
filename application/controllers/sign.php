@@ -30,12 +30,11 @@ class Sign extends CI_Controller {
         	$display_name = $this->input->post('display_name');
         	$username = $this->input->post('username');
         	$password = $this->input->post('password1');
-        	$role = $this->input->post('role');
         	$data = array(
         		'display_name' => $display_name,
 				'username' => $username,
 				'password' => $password,
-				'role' => $role
+				'role' => 'author'
 			);
         	$this->user_model->add_user($data);
         	$this->session->set_flashdata("pesan", "<p>Akun telah berhasil dibuat. Silahkan login dengan akun yang telah Anda buat.</p>");

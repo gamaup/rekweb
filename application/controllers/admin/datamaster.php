@@ -63,7 +63,6 @@ class Datamaster extends CI_Controller {
                 }
                 $data = array(
                     'nama_mkn' => $this->input->post('nama'),
-                    'desc' => $this->input->post('desc'),
                     'foto' => $foto,
                     'asal' => $this->input->post('asal'),
                     'waktu' => $this->input->post('waktu'),
@@ -104,7 +103,6 @@ class Datamaster extends CI_Controller {
             $this->load->library('form_validation');
             $this->form_validation->set_error_delimiters("class='form-error' title='", "'");
             $this->form_validation->set_rules('nama', 'Nama', 'trim|required|xss_clean');
-            $this->form_validation->set_rules('desc', 'Deskripsi', 'trim|required|xss_clean');
 
             if ($this->form_validation->run() == FALSE) {
                 $data = array(
@@ -123,7 +121,6 @@ class Datamaster extends CI_Controller {
                 if ($_FILES['photo']['size'] == 0) {
                     $data = array(
                         'nama_mkn' => $this->input->post('nama'),
-                        'desc' => $this->input->post('desc'),
                         'asal' => $this->input->post('asal'),
                         'waktu' => $this->input->post('waktu'),
                         'jenis' => $this->input->post('jenis'),
@@ -131,6 +128,9 @@ class Datamaster extends CI_Controller {
                         'ukuran' => $ukuran = $this->input->post('ukuran'),
                         'author' => $this->session->userdata('logged_in')['id_user']
                     );
+                    if ($this->session->userdata('logged_in')['role'] == 'editor') {
+                        $data['status'] = '1';
+                    }
                 } else {
                     //delete foto lama
                     $delete = $this->input->post('image_delete');
@@ -151,6 +151,9 @@ class Datamaster extends CI_Controller {
                         'cara' => $this->input->post('cara'),
                         'ukuran' => $this->input->post('ukuran')
                     );
+                    if ($this->session->userdata('logged_in')['role'] == 'editor') {
+                        $data['status'] = '1';
+                    }
                 }
                 $this->admin->updateFood($data, $id);
                 $this->session->set_flashdata("pesan", "<div class='alert alert-notice'>

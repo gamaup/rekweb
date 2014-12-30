@@ -24,12 +24,11 @@
                     <ul class='nav-second'>
                         <li <?= isset($pos_child) && $pos_parent == 'datamaster' && $pos_child == 'list_makanan' ? "class='active'" : ""; ?>><a href='<?= base_url() ?>admin/datamaster'>List Makanan</a></li>
                         <li <?= isset($pos_child) && $pos_parent == 'datamaster' && $pos_child == 'tambah_makanan' ? "class='active'" : ""; ?>><a href='<?= base_url() ?>admin/datamaster/add'>Tambah Makanan</a></li>
+                        <?php if($this->session->userdata('logged_in')['role'] == 'superadmin' || $this->session->userdata('logged_in')['role'] == 'editor') { ?>
                         <li <?= isset($pos_child) && $pos_parent == 'datamaster' && $pos_child == 'manage_kategori' ? "class='active'" : ""; ?>><a href='<?= base_url() ?>admin/datamaster/kategori'>Manage Kategori</a></li>
+                        <?php } ?>
                     </ul>
                 </li>
-                <?php if($this->session->userdata('logged_in')['role'] == 'editor' || $this->session->userdata('logged_in')['role'] == 'superadmin') { ?>
-                <li <?= $pos_parent == 'editor' ? "class='active'" : ""; ?>><a href='<?= base_url() ?>admin/review'><i class="fa fa-pencil"></i>Editor Review<i class='fa arrow'></i></a></li>
-                <?php } ?>
                 <?php if($this->session->userdata('logged_in')['role'] == 'superadmin') { ?>
                 <li class='second <?= $pos_parent == 'user_management' ? "active" : ""; ?>'><a><i class="fa fa-users"></i>User Management<i class='fa arrow'></i></a>
                     <ul class='nav-second'>

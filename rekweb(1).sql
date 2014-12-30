@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2014 at 03:40 PM
+-- Generation Time: Dec 30, 2014 at 04:22 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -100,16 +100,7 @@ CREATE TABLE IF NOT EXISTS `makanan` (
   `author` int(11) NOT NULL,
   `status` enum('0','1') NOT NULL,
   PRIMARY KEY (`id_mkn`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `makanan`
---
-
-INSERT INTO `makanan` (`id_mkn`, `nama_mkn`, `foto`, `asal`, `waktu`, `jenis`, `cara`, `ukuran`, `author`, `status`) VALUES
-(2, 'reterte', 'g2.jpg', 1, 6, 9, 13, 17, 0, '0'),
-(3, 'fhgfg', '10370965_890798844266510_1476682871330915709_n.jpg', 4, 8, 10, 0, 18, 0, '0'),
-(4, 'tes', '1623546_1464622820426332_948945036_n2.png', 1, 6, 9, 13, 17, 1, '0');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -125,19 +116,20 @@ CREATE TABLE IF NOT EXISTS `user` (
   `display_name` varchar(30) NOT NULL,
   `last_login` datetime NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `role`, `display_name`, `last_login`) VALUES
-(1, 'admin', '81dc9bdb52d04dc20036dbd8313ed055', 'superadmin', 'Super Admin', '2014-12-30 15:23:05'),
-(2, 'gamaup', '81dc9bdb52d04dc20036dbd8313ed055', 'editor', 'Gama Unggul Priambada', '2014-12-16 14:36:29'),
+(1, 'admin', '81dc9bdb52d04dc20036dbd8313ed055', 'superadmin', 'Super Admin', '2014-12-30 16:05:25'),
+(2, 'gamaup', '81dc9bdb52d04dc20036dbd8313ed055', 'editor', 'Gama Unggul Priambada', '2014-12-30 16:06:11'),
 (6, 'tester', '25d55ad283aa400af464c76d713c07ad', '', 'Tester', '0000-00-00 00:00:00'),
 (7, 'blahblah', '25d55ad283aa400af464c76d713c07ad', '', 'blah blahblah', '0000-00-00 00:00:00'),
 (8, 'qwerty', '25d55ad283aa400af464c76d713c07ad', '', 'dfgdgsg', '0000-00-00 00:00:00'),
-(9, 'asdr', '25d55ad283aa400af464c76d713c07ad', '', 'asdfasd', '2014-12-30 15:26:41');
+(9, 'asdr', '25d55ad283aa400af464c76d713c07ad', '', 'asdfasd', '2014-12-30 15:26:41'),
+(10, 'author', '25d55ad283aa400af464c76d713c07ad', 'author', 'Nyoba Author', '2014-12-30 15:53:41');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
