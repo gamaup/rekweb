@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.12
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2014 at 03:50 PM
--- Server version: 5.6.16
--- PHP Version: 5.5.11
+-- Generation Time: Dec 30, 2014 at 03:31 AM
+-- Server version: 5.5.27
+-- PHP Version: 5.4.7
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `makanan` (
 --
 
 INSERT INTO `makanan` (`id_mkn`, `nama_mkn`, `foto`, `asal`, `waktu`, `jenis`, `cara`, `ukuran`) VALUES
-(2, 'reterte', 'depositphotos_33751391-flat-logo-house.jpg', 1, 6, 9, 13, 17),
+(2, 'reterte', 'g2.jpg', 1, 6, 9, 13, 17),
 (3, 'fhgfg', '10370965_890798844266510_1476682871330915709_n.jpg', 4, 8, 10, 0, 18);
 
 -- --------------------------------------------------------

@@ -4,3 +4,4 @@
 	<link rel="stylesheet" href="<?= base_url()?>assets/css/fancybox/jquery.fancybox.css">
  	<link rel="stylesheet" href="<?= base_url()?>assets/css/gallery.css">
 	<script src="<?= base_url()?>assets/js/jquery-1.11.1.min.js" type="text/javascript"></script><!--Fade-->
+	<script src="<?= base_url()?>assets/js/fotorama.js" type="text/javascript"></script>
