@@ -66,10 +66,6 @@
                         <?php } ?>
                     </select>
                 </div>
-                <div class='input-row inline'>
-                    <h5>Desc :</h5>
-                    <textarea name='desc' <?= form_error('desc'); ?>><?= $d->desc ?></textarea>
-                </div>
                 <div class='input-row submit'>
                     <input type='submit' value='Update' class='button button-blue'/>
                 </div>

@@ -28,11 +28,31 @@ Class Menu_model extends CI_Model {
         return $q->result();
     }
 
-    function cari($place, $type) {
-        $this->db->like('place', $place);
-        $this->db->like('type', $type);
-        $q = $this->db->get('makanan');
-        return $q->result();
+    function cari($golek) {
+        $this->db->like('nama_mkn', $golek['cari']);
+        if ($golek['asal'] != '') {
+            $this->db->where('asal', $golek['asal']);
+        }
+        if ($golek['jenis'] != '') {
+            $this->db->where('jenis', $golek['jenis']);
+        }
+        if ($golek['waktu'] != '') {
+            $this->db->where('waktu', $golek['waktu']);
+        }
+        if ($golek['cara'] != '') {
+            $this->db->where('cara', $golek['cara']);
+        }
+        if ($golek['ukuran'] != '') {
+            $this->db->where('ukuran', $golek['ukuran']);
+        }
+        $this->db->from('makanan');
+        $this->db->order_by('id_mkn','desc');
+        $q = $this->db->get();
+        if ($q->num_rows() > 0) {
+            return $q->result();
+        } else {
+            return null;
+        }
     }
 
 }

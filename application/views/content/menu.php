@@ -1,9 +1,9 @@
 <div class="mleft">
          <h3>SELECT CATEGORY</h3>
       <div class="kategori">
-        <form action="<?= base_url()?>menu" method="Get">
+        <form action="<?= base_url()?>menu/cari" method="Get">
   
-        <input type="text">
+        <input type="text" name="q">
           
         <select name="place" class="select">
           <option value="">Food place...</option>
@@ -42,7 +42,7 @@
     </div>
 
     <div class="mright">
-      <h4>All CATEGORIES</h4>
+      <h4><?= $content_type ?></h4>
         <div class="all-kategori">
 
     <div class="gallery">
@@ -50,6 +50,7 @@
       <div class="photos">
         
         <div class="thumbnail_wrap">
+          <?php if ($makanan != null) { ?>
         <?php foreach ($makanan as $m) {?>
         	 <a href="<?= base_url()?>menu/view/<?= $m->id_mkn ?>" class="thumbnail">
               <div class="nama-makan-container">
@@ -59,6 +60,9 @@
               </div>
             </a>
         <?php } ?>
+        <?php } else {
+            echo "no match found";
+        }?>
 
         </div><!-- .thumbnail_wrap end -->
 

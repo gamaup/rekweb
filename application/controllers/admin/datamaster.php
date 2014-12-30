@@ -40,7 +40,6 @@ class Datamaster extends CI_Controller {
             $this->load->library('form_validation');
             $this->form_validation->set_error_delimiters("class='form-error' title='", "'");
             $this->form_validation->set_rules('nama', 'Nama', 'trim|required|xss_clean');
-            $this->form_validation->set_rules('desc', 'Deskripsi', 'trim|required|xss_clean');
             $this->form_validation->set_rules('photo-name', 'Foto', 'trim|required');
 
             if ($this->form_validation->run() == FALSE) {
@@ -71,7 +70,8 @@ class Datamaster extends CI_Controller {
                     'jenis' => $this->input->post('jenis'),
                     'cara' => $this->input->post('cara'),
                     'ukuran' => $ukuran = $this->input->post('ukuran'),
-                    'author' => $this->session->userdata('logged_in')['id_user']
+                    'author' => $this->session->userdata('logged_in')['id_user'],
+                    'status' => '0'
                 );
                 $this->admin->addFood($data);
                 $this->session->set_flashdata("pesan", "<div class='alert alert-notice'>

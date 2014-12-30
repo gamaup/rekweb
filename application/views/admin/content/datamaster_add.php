@@ -60,10 +60,6 @@
                         } ?>
                     </select>
                 </div>
-                <div class='input-row inline'>
-                    <h5>Desc :</h5>
-                    <textarea name='desc' <?= form_error('desc'); ?>></textarea>
-                </div>
                 <div class='input-row submit'>
                     <input type='submit' value='Submit' class='button button-blue'/>
                 </div>

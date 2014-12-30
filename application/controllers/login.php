@@ -13,7 +13,7 @@ class Login extends CI_Controller {
 
     public function index() {
         if ($this->session->userdata('logged_in')) {
-            redirect('dashboard', 'refresh');
+            redirect('admin/datamaster', 'refresh');
         } else {
             $this->load->library('form_validation');
             $this->form_validation->set_error_delimiters('<p class="error">', '</p>');

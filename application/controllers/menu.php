@@ -11,6 +11,7 @@ class Menu extends CI_Controller {
     function index() {
     	$data['content'] = 'content/menu';
     	$data['makanan'] = $this->menu_model->getAll();
+        $data['content_type'] = "ALL CATEGORIES";
     	$this->load->view('template/page', $data);
     }
 
@@ -25,13 +26,23 @@ class Menu extends CI_Controller {
 	}
 
 	function cari() {
-		$kolom = $this->input->post('kolom');
-		$cari = $this->input->POST('cari');
-		$data['tampil'] = $this->user_model->cari_mahasiswa($kolom, $cari);
-		if($data['tampil'] == null) {
-			print('maaf data tidak ditemukan');
-		} else {
-			$this->load->view('user/tampil', $data);
-		}
+        $cari = $this->input->get('q', TRUE);
+        $place = $this->input->get('place', TRUE);
+        $type = $this->input->get('type', TRUE);
+        $time = $this->input->get('time', TRUE);
+        $how = $this->input->get('how', TRUE);
+        $size = $this->input->get('size', TRUE);
+        $data = array(
+            'cari' => $cari,
+            'asal' => $place,
+            'jenis' => $type,
+            'waktu' => $time,
+            'cara' => $how,
+            'ukuran' => $size
+        );
+		$data['makanan'] = $this->menu_model->cari($data);
+        $data['content'] = 'content/menu';
+        $data['content_type'] = "SEARCH RESULT";
+        $this->load->view('template/page', $data);
 	}
 }

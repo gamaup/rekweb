@@ -64,7 +64,7 @@
       <h5>Cook-Off</h5>	
  
         <ul class="menu">
-          <li><a href="<?= base_url("home")?>">HOME</a></li>
+          <li><a href="<?= base_url()?>">HOME</a></li>
           <li><a href="<?= base_url("menu")?>">MENU-LIST</a></li>
           <li><a href="#event">ABOUT US</a></li>
           <li><a href="#contact">CONTACT US</a></li>
